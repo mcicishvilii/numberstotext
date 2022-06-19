@@ -79,8 +79,6 @@ class MainActivity : AppCompatActivity() {
                 "8" to "რვაას",
                 "9" to "ცხრაას")
 
-            textView.text = trimmedp.toString()
-
             var x = ""
 
             when (trimmedp.size) {
@@ -128,28 +126,34 @@ class MainActivity : AppCompatActivity() {
 
                 3 -> {
 
-                    if((trimmedp[2] == "0")){
-                        textView.text = ("${map100to1000[trimmedp[0]]} ${map10to90Freestanding[trimmedp[1]]}")
+                    if(trimmedp[2] == "0" && trimmedp[1] == "1"){
+                        textView.text = ("${map100to1000[trimmedp[0]]} ათი")
                         checker.text = " 1 if"
+                    }
+                    else if((trimmedp[2] == "0")){
+                        textView.text = ("${map100to1000[trimmedp[0]]} ${map10to90Freestanding[trimmedp[1]]}")
+                        checker.text = " 2 if"
                     }
                     else if(trimmedp[1] == "2" || trimmedp[1] == "4" || trimmedp[1] == "6" || trimmedp[1] == "8" ) {
                         textView.text = ("${map100to1000[trimmedp[0]]} ${map10to90[trimmedp[1]]}${map1to10[trimmedp[2]]}")
-                        checker.text = " 2 if"
+                        checker.text = " 3 if"
                     }
                     else if(trimmedp[1] == "3" || trimmedp[1] == "5" || trimmedp[1] == "7" || trimmedp[1] == "9" ){
                         textView.text = ("${map100to1000[trimmedp[0]]} ${map10to90[trimmedp[1]]}${map11to20[trimmedp[2]]}")
-                        checker.text = " 3 if"
+                        checker.text = " 4 if"
 
                     }
                     else if(trimmedp[1] == "0"){
                         textView.text = ("${map100to1000[trimmedp[0]]} ${map1to10[trimmedp[2]]}")
-                        checker.text = " 4 if"
+                        checker.text = " 5 if"
                     }
 
                     else if(trimmedp[1] == "1"){
                         textView.text = ("${map100to1000[trimmedp[0]]} ${map11to20[trimmedp[2]]}")
-                        checker.text = " 5 if"
+                        checker.text = " 6 if"
                     }
+
+
 
                     when {
                         trimmedp[0] == "1" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "ასი"

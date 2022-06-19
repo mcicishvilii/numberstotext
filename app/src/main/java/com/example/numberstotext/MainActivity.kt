@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                 "8" to "ოთხმოცდა",
                 "9" to "ოთხმოცდა")
 
-            val map10to90Freestanding = mutableMapOf<String,String>(
+            val map10to90Freestanding = mutableMapOf(
                 "2" to "ოცი",
                 "3" to "ოცდაათი",
                 "4" to "ორმოცი",

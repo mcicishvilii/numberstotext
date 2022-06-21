@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
                 "9" to "ოთხმოცდა")
 
             val map10to90Freestanding = mutableMapOf(
+                "1" to "ათი",
                 "2" to "ოცი",
                 "3" to "ოცდაათი",
                 "4" to "ორმოცი",
@@ -79,22 +80,10 @@ class MainActivity : AppCompatActivity() {
                 "8" to "რვაას",
                 "9" to "ცხრაას")
 
-            var x = ""
-
             when (trimmedp.size) {
                 1 -> {
-                    when {
-                        trimmedp[0] == "1" -> x = "ერთი"
-                        trimmedp[0] == "2" -> x = "ორი"
-                        trimmedp[0] == "3" -> x = "სამი"
-                        trimmedp[0] == "4" -> x = "ოთხი"
-                        trimmedp[0] == "5" -> x = "ხუთი"
-                        trimmedp[0] == "6" -> x = "ექვსი"
-                        trimmedp[0] == "7" -> x = "შვიდი"
-                        trimmedp[0] == "8" -> x = "რვა"
-                        trimmedp[0] == "9" -> x = "ცხრა"
-                    }
-                    textView.text = x
+
+                    textView.text = ("${map1to10[trimmedp[0]]}")
                     textView.setTextColor(Color.WHITE)
 
                 }
@@ -109,16 +98,10 @@ class MainActivity : AppCompatActivity() {
                     else if (trimmedp[0] == "1"){
                         textView.text = ("${map11to20[trimmedp[1]]}")
                     }
-                    when {
-                        trimmedp[0] == "1" && trimmedp[1] == "0" -> textView.text = "ათი"
-                        trimmedp[0] == "2" && trimmedp[1] == "0" -> textView.text = "ოცი"
-                        trimmedp[0] == "3" && trimmedp[1] == "0" -> textView.text = "ოცდაათი"
-                        trimmedp[0] == "4" && trimmedp[1] == "0" -> textView.text = "ორმოცი"
-                        trimmedp[0] == "5" && trimmedp[1] == "0" -> textView.text = "ორმოცდაათი"
-                        trimmedp[0] == "6" && trimmedp[1] == "0" -> textView.text = "სამოცი"
-                        trimmedp[0] == "7" && trimmedp[1] == "0" -> textView.text = "სამოცდაათი"
-                        trimmedp[0] == "8" && trimmedp[1] == "0" -> textView.text = "ოთხმოცი"
-                        trimmedp[0] == "9" && trimmedp[1] == "0" -> textView.text = "ოთხმოცდაათი"
+
+                    if ((trimmedp[1] == "0") && (trimmedp[0] == "1" || trimmedp[0] == "2" || trimmedp[0] == "4" ||
+                                trimmedp[0] == "6" || trimmedp[0] == "8" || trimmedp[0] == "3" || trimmedp[0] == "5" || trimmedp[0] == "7" || trimmedp[0] == "9"  )){
+                        textView.text = ("${map10to90Freestanding[trimmedp[0]]}")
                     }
                     textView.setTextColor(Color.WHITE)
 
@@ -153,22 +136,11 @@ class MainActivity : AppCompatActivity() {
                         checker.text = " 6 if"
                     }
 
-
-
-                    when {
-                        trimmedp[0] == "1" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "ასი"
-                        trimmedp[0] == "2" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "ორასი"
-                        trimmedp[0] == "3" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "სამასი"
-                        trimmedp[0] == "4" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "ოთხასი"
-                        trimmedp[0] == "5" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "ხუთასი"
-                        trimmedp[0] == "6" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "ექვსასი"
-                        trimmedp[0] == "7" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "შვიდასი"
-                        trimmedp[0] == "8" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "რვაასი"
-                        trimmedp[0] == "9" && trimmedp[1] == "0" && trimmedp[2] == "0" -> textView.text = "ცხრაასი"
+                    if ((trimmedp[2] == "0") && (trimmedp[1] == "0") && (trimmedp[0] == "1" || trimmedp[0] == "2" || trimmedp[0] == "4" ||
+                                trimmedp[0] == "6" || trimmedp[0] == "8" || trimmedp[0] == "3" || trimmedp[0] == "5" || trimmedp[0] == "7" || trimmedp[0] == "9"  )){
+                        textView.text = ("${map100to1000[trimmedp[0]]}ი")
                     }
-
                     textView.setTextColor(Color.WHITE)
-
                 }
             }
             if (trimmedp.size > 3){
